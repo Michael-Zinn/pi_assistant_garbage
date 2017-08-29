@@ -33,14 +33,14 @@ gpio(
 
   def take_out_trash? type, max_delay 
     now = Time.now
-    last_date = type.find { |t| t < now }
+    last_date = type.reverse.find { |t| t < now }
     now.to_i - last_date.to_i < max_delay
   end
 
   loop do
-      paper     (take_out_trash? paper    , (days  6))
-      recycling (take_out_trash? recycling, (days 14))
-      sleep 60
+    paper     (take_out_trash? paper    , (days  6))
+    recycling (take_out_trash? recycling, (days 14))
+    sleep 60
   end
 
 end
