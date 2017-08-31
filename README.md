@@ -4,7 +4,16 @@ Garbage schedule indicators for raspberry pi. Also for weather.
 
 ![Cardboard cover for LEDs](https://pbs.twimg.com/media/DILak1TW0AApdLA.jpg)
 
-This is a work in progress and should currently neither be used nor read by anybody.
+This is a work in progress. It works but isn't convenient to use.
+
+## How to use
+
+1. Clone the repository
+2. Make weather.rb and garbage.rb executable
+3. Change the garbage data in garbage.rb to match your local garbage schedule
+4. Connect the pins to the numbers mentioned in the scripts
+5. Start garbage.rb
+6. Start weather.rb with your api key and your city code as parameters
 
 ## The garbage problem
 
@@ -24,7 +33,7 @@ If too many people who share the same trash can participate in this arms race no
 
 ## Future of this project
 
-1. add indicators for weather (to answer the "should I bring an umbrella?" question).
+1. :white_check_mark: add indicators for weather (to answer the "should I bring an umbrella?" question).
 2. move the gpio part to a separate gem and add a config.
 3. move weather indicator to separate repo and make it configurable.
 4. Figure out how to get garbage schedule data live (instead of hardcoding it).
