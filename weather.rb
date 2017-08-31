@@ -7,7 +7,8 @@ require 'net/http'
 require 'json'
 
 API_KEY = ARGV[0]
-FORECAST = URI("https://api.openweathermap.org/data/2.5/forecast?id=2938913&APPID=#{API_KEY}")
+CITY_CODE = ARGV[1]
+FORECAST = URI("https://api.openweathermap.org/data/2.5/forecast?id=#{CITY_CODE}&APPID=#{API_KEY}")
 
 gpio(
   sun:   +19, # yellow sun LED
