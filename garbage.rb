@@ -3,8 +3,8 @@
 require_relative 'easygpio.rb'
 
 gpio(
-  paper:     +6,
-  recycling: +5
+  paper:     +26,
+  recycling: +19
 ) do
 
   paper = [

@@ -1,0 +1,87 @@
+" ": " "
+A: .-
+B: -...
+C: -.-.
+D: -..
+E: .
+F: ..-.
+G: --.
+H: ....
+I: ..
+J: .---
+K: -.-
+L: .-..
+M: --
+N: -.
+O: ---
+P: .--.
+Q: --.-
+R: .-.
+S: ...
+T: "-"
+U: ..-
+V: ...-
+W: .-- 
+X: -..-
+Y: -.--
+Z: --.. 
+1: .----
+2: ..---
+3: ...--
+4: ....-
+5: .....
+6: -....
+7: --...
+8: ---..
+9: ----.
+0: -----
+/: -..-.
++: .-.-.
+=: -...-
+.: .-.-.-
+",": --..--
+?: ..--..
+(: -.--.
+-: -....-
+): -.--.- 
+"'": .----. 
+$: ...-..-
+"\"": .-..-.
+":": ---...
+"!": -.-.--
+_: ..--.-
+;: -.-.-.
+"@": .--.-.
+
+
+
+#          <AR>    "+" over, end of message
+#          <AS>    "*" please stand by (<AS> 5  Wait 5 Minutes) (".-...")
+#          <BT>    "=" (double dash) pause, break for text
+#          CL          going off the air (clear)
+#          CQ          calling any station
+#          K           go, invite any station to transmit
+#          <KN>    "(" go only, invite a specific station to transmit
+#          R           all received OK
+#          <SK>    "%" end of contact (sent before call) ("...-.-", known also as <VA>)
+
+#      The following less-used prosigns are included if one uses the -S option:
+
+#          <AA>    "^" new line (".-.-", the same as :a, ae)
+#          <BK>    "#" invite receiving station to transmit ("-...-.-")
+#          <KA>    "&" attention ("-.-.-")
+#          <SN>    "~" understood ("...-.")
+
+#      The following characters are included if one uses the -A option:
+
+#                  :a  .-.-   (also for ae, the same as <AA>)
+#                  `a  .--.-  (also oa, danish a with ring over it)
+#                  ch  ----   (bar-ch ?, bar-h ?, ISO 8859-1 code 199 and 231 ?)
+#                  -d  ..--.  (eth, overstrike d with -, ISO 8859-1 code 208 and 240)
+#                  `e  ..-..
+#                  ~n  --.--
+#                  :o  ---.   (also for oe)
+#                  :u  ..--   (also for ue)
+#                  ]p  .--..  (thorn, overstrike ] with p, ISO 8859-1 code 222 and 254)
+#                  paragraph  .-.-..  (ISO 8859-1 code 167 ?)
+
