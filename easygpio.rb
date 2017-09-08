@@ -36,10 +36,10 @@ class Gpio
         self.class.send(:define_method, pin.name) do |on_off|
           case on_off
           when:on, true
-            puts "Pin #{pin.name} on"
+            # puts "Pin #{pin.name} on"
             pin_on(pin.number)
           when:off, false
-            puts "Pin #{pin.name} off"
+            # puts "Pin #{pin.name} off"
             pin_off(pin.number)
           end
         end

@@ -3,21 +3,29 @@
 require_relative 'easygpio.rb'
 require 'yaml'
 
-DELAY = ARGV[0].to_f
+# DELAY = ARGV[0].to_f
 MORSE = YAML.load(File.open("morse.yaml", "rb").read)
+QUICK_DELAY = 0.05
+LETTER_DELAY = ARGV[0]&.to_f || (QUICK_DELAY * 2)
+WORD_DELAY = ARGV[0]&.to_f || (QUICK_DELAY * 2)
 
-def morse(text, speed, output) 
-  m = text.upcase.chars.map { |c| MORSE[c] }.join " "
+def morse(text, output) 
+  m = text.upcase.chars.map { |c| MORSE[c] }.join(" ")
 
+  puts "+++"
   puts m
+  puts "+++"
+  puts text
+  puts "+++"
 
   m.chars.each do |c|
     case c
-      when "." then output.call:on; sleep speed; output.call:off; sleep speed
-      when "-" then output.call:on; sleep speed * 3; output.call:off; sleep speed
-      when " " then sleep speed * 2
+      when "." then output.call:on; sleep QUICK_DELAY; output.call:off; sleep QUICK_DELAY
+      when "-" then output.call:on; sleep QUICK_DELAY * 3; output.call:off; sleep QUICK_DELAY
+      when " " then sleep LETTER_DELAY
     end
   end
+  puts "END"
 end
 
 MENU = ["twitter", "fortune", "speed"]
@@ -28,12 +36,14 @@ gpio(
   btn_right: -6
 ) do 
 
-  #morse("twitter fortune speed", 0.2, method(:buzzer))
+  morse("twitter fortune speed", method(:buzzer))
   #sleep 10
+
+  
   
   loop do
     if btn_right?
-      morse `fortune`, DELAY, (method :buzzer)
+      morse `fortune`, (method :buzzer)
     end
     sleep 0.1
   end

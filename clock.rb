@@ -3,10 +3,10 @@
 require_relative 'easygpio.rb'
 
 gpio(
-  sun:      +19,
-  rain:     +13,
-  paper:     +6,
-  recycling: +5
+  sun:       +11,
+  rain:       +8,
+  paper:      +9,
+  recycling: +25
 ) do 
   loop do
     t = Time.now.hour % 12
