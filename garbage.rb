@@ -5,11 +5,11 @@ require 'yaml'
 
 require_relative 'easygpio.rb'
 
-GARBAGE = YAML.load File.open("garbage.yaml", "rb").read
+GARBAGE = YAML.load File.read("garbage.yaml")
 
 gpio(
-  paper:     +26,
-  recycling: +19
+  led_paper:     +26,
+  led_recycling: +19
 ) do
 
   def capacity_left? date, garbage
@@ -20,8 +20,8 @@ gpio(
   end
 
   loop do
-    paper     (capacity_left? Date.today, GARBAGE["paper"    ])
-    recycling (capacity_left? Date.today, GARBAGE["recycling"])
+    led_paper     (capacity_left? Date.today, GARBAGE["paper"    ])
+    led_recycling (capacity_left? Date.today, GARBAGE["recycling"])
     sleep 60
   end
 
