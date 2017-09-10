@@ -4,7 +4,7 @@ require 'date'
 require 'yaml'
 require_relative 'easygpio.rb'
 
-GARBAGE = YAML.load File.read("garbage.yaml")
+GARBAGE = YAML.load_file "garbage.yaml"
 
 def capacity_left? date, garbage
   most_recent_disposal = garbage["schedule"].reverse.find { |t| t < date }
